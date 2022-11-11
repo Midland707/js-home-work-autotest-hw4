@@ -1,6 +1,6 @@
 //MODUL4 AUTOTEST25
 
-[
+const loadUsers = [
   {
     name: "Moore Hensley",
     email: "moorehensley@indexia.com",
@@ -9,7 +9,7 @@
     isActive: false,
     balance: 2811,
     gender: "male",
-    age: 37
+    age: 37,
   },
   {
     name: "Sharlene Bush",
@@ -19,7 +19,7 @@
     isActive: true,
     balance: 3821,
     gender: "female",
-    age: 34
+    age: 34,
   },
   {
     name: "Ross Vazquez",
@@ -29,7 +29,7 @@
     isActive: false,
     balance: 3793,
     gender: "male",
-    age: 24
+    age: 24,
   },
   {
     name: "Elma Head",
@@ -39,7 +39,7 @@
     isActive: true,
     balance: 2278,
     gender: "female",
-    age: 21
+    age: 21,
   },
   {
     name: "Carey Barr",
@@ -49,7 +49,7 @@
     isActive: true,
     balance: 3951,
     gender: "male",
-    age: 27
+    age: 27,
   },
   {
     name: "Blackburn Dotson",
@@ -59,7 +59,7 @@
     isActive: false,
     balance: 1498,
     gender: "male",
-    age: 38
+    age: 38,
   },
   {
     name: "Sheree Anthony",
@@ -69,23 +69,22 @@
     isActive: true,
     balance: 2764,
     gender: "female",
-    age: 39
-  }
-]
+    age: 39,
+  },
+];
 
 // Change code below this line
 const getFriends = (users) => {
-   
+  const allFriends = users.flatMap((user) => user.friends);
+  const uniqueFriends = allFriends.filter(
+    (friend, index, array) => array.indexOf(friend) === index
+  );
+  console.log(uniqueFriends);
+  return uniqueFriends;
 };
 // Change code above this line
 
-const allGenres = books.flatMap(book => book.genres);
-const uniqueGenres = allGenres.filter(
-  (genre, index, array) => array.indexOf(genre) === index
-);
-
-console.log(allGenres);
-console.log(uniqueGenres);
+getFriends(loadUsers);
 
 // Доповни функцію getFriends(users) таким чином, щоб вона повертала масив друзів всіх
 // користувачів(властивість friends).У декількох користувачів можуть бути однакові друзі,
