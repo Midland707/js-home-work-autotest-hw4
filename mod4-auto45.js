@@ -28,7 +28,7 @@ const MIN_BOOK_RATING = 8;
 
 const names = books
     .filter((book) => book.rating > MIN_BOOK_RATING)
-    .map((book) => book.name)
+    .map((book) => book.author)
     .sort();
 console.log("names - ", names);
 // Доповни код таким чином, щоб у змінній names вийшов масив імен авторів
